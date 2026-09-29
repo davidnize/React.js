@@ -1,7 +1,7 @@
 import React from "react";
 import contacts from "./contacts";
 
-console.log(contacts(3));
+console.log(contacts());
 
 function App() {
   return (
