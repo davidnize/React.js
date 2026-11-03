@@ -1,0 +1,19 @@
+import React, { useState } from "react";
+
+function App() {
+  const now = new Date().toLocaleTimeString()
+  const [time, timeNow] = useState(now);
+
+  function getTime() {
+    timeNow(new Date().toLocaleTimeString());
+  }
+  setInterval(getTime, 1000);
+  return (
+    <div className="container">
+      <h1>{time}</h1>
+      <button onClick={getTime}>Get Time</button>
+    </div>
+  );
+}
+
+export default App;
