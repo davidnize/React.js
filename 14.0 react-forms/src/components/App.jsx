@@ -9,8 +9,12 @@ function App() {
   }
   // console.log(name);
 
-  function submitName() {
+  function submitName(event) {
     setName(inputValue);
+
+
+    event.preventDefault()
+
   }
 
   return (
