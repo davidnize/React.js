@@ -12,6 +12,7 @@ function App() {
     setToDo((prev) =>
       [...prev, value]
   );
+  event.target.reset();
   }
 
   return (
@@ -21,7 +22,7 @@ function App() {
       </div>
       <div className="form">
         <form onSubmit={toDoList}>
-          <input name="todo" type="text" placeholder="add a to do" value={todo} />
+          <input name="todo" type="text" placeholder="add a to do"/>
           <button type="submit">
             <span>Add</span>
           </button>
