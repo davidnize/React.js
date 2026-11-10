@@ -4,9 +4,37 @@ function App() {
   const [contact, setContact] = useState({
     fName: "",
     lName: "",
-    email: ""
+    email: "",
   });
 
+  function updateName(event) {
+    const { name, value } = event.target;
+
+   console.log(event.target);
+   
+
+    setContact((prevValue) => {
+      if (name === "fName") {
+        return {
+          fName: value,
+          lName: prevValue.lName,
+          email: prevValue.email,
+        };
+      } else if (name === "lName") {
+        return {
+          fName: prevValue.fName,
+          lName: value,
+          email: prevValue.email, 
+        };
+      } else if (name === "email") {
+        return {
+          fName: prevValue.fName,
+          lName: prevValue.lName,
+          email: value,
+        }
+      }
+    });
+  }
   return (
     <div className="container">
       <h1>
@@ -14,13 +42,24 @@ function App() {
       </h1>
       <p>{contact.email}</p>
       <form>
-        <input name="fName"
-        onCha
-         placeholder="First Name"
-         
+        <input
+          name="fName"
+          onChange={updateName}
+          placeholder="First Name"
+          value={contact.fName}
+        />
+        <input
+          name="lName"
+          onChange={updateName}
+          placeholder="Last Name"
+          value={contact.lName}
+        />
+        <input 
+        name="email" 
+        onChange={updateName}
+        placeholder="Email"
+        value={contact.email}
          />
-        <input name="lName" placeholder="Last Name" />
-        <input name="email" placeholder="Email" />
         <button>Submit</button>
       </form>
     </div>
