@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/App";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
 //CHALLENGE: Make the code in App.jsx work.
 //The final app should have a single contact
