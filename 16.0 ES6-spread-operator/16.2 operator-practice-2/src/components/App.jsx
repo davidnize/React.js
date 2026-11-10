@@ -21,7 +21,7 @@ function App() {
       </div>
       <div className="form">
         <form onSubmit={toDoList}>
-          <input name="todo" type="text" placeholder="add a to do" />
+          <input name="todo" type="text" placeholder="add a to do" value={todo} />
           <button type="submit">
             <span>Add</span>
           </button>
