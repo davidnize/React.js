@@ -6,22 +6,32 @@ import CreateArea from "./CreateArea";
 import { useState } from "react";
 
 function App() {
-  function addNote() {
-    const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([]);
 
-    setNotes((prevNote) => [
-      ...prevNote,
-      {title, content},
-    ]);
+  function addNote(title, content) {
+    setNotes((prevNotes) => [...prevNotes, { title, content }]);
   }
 
+  function deleteNote(id) {
+    setNotes((prevNotes) => {
+      return prevNotes.filter((notes, index) => {
+        return index !== id;
+      });
+    });
+  }
   return (
     <div>
       <Header />
-      <CreateArea 
-        addNote={addNote}
-      />
-      <Note key={1} title="Note title" content="Note content" />
+      <CreateArea addNote={addNote} />
+      {notes.map((note, index) => (
+        <Note
+          key={index}
+          id={index}
+          title={note.title}
+          content={note.content}
+          onDelete={deleteNote}
+        />
+      ))}
       <Footer />
     </div>
   );

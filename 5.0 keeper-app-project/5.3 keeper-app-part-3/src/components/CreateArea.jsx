@@ -6,13 +6,12 @@ function CreateArea(props) {
 
   function handleTitle(event) {
     const { value } = event.target;
-    // console.log(value);
+    console.log(value);
     setTitle(value);
-    setTitle("");
   }
   function handleContent(event) {
     const { value } = event.target;
-    // console.log(value);
+    console.log(value);
     setContent(value);
   }
 

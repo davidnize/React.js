@@ -7,7 +7,7 @@ function InputArea(props) {
     const newValue = event.target.value;
     setInputText(newValue);
   }
-
+  
   return (
     <div className="form">
       <input onChange={handleChange} type="text" value={inputText} />
